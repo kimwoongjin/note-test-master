@@ -59,7 +59,7 @@ var saveAs = saveAs || (function(view) {
 			var revoker = function() {
 				if (typeof file === "string") {
 					get_URL().revokeObjectURL(file);
-				} else 
+				} else {
 					file.remove();
 				}
 			};
@@ -104,7 +104,7 @@ var saveAs = saveAs || (function(view) {
 							var url = is_chrome_ios ? reader.result : reader.result.replace(/^data:[^;]*;/, 'data:attachment/file;');
 							var popup = view.open(url, '_blank');
 							if(!popup) view.location.href = url;
-							url=undefined; // release reference before dispatching
+							url=undefined;
 							filesaver.readyState = filesaver.DONE;
 							dispatch_all();
 						};
@@ -149,7 +149,58 @@ var saveAs = saveAs || (function(view) {
 		, saveAs = function(blob, name, no_auto_bom) {
 			return new FileSaver(blob, name || blob.name || "Memo", no_auto_bom);
 		}
-	);
+	;
+	if (typeof navigator !== "undefined" && navigator.msSaveOrOpenBlob) {
+		return function(blob, name, no_auto_bom) {
+			name = name || blob.name || "Memo";
+
+			if (!no_auto_bom) {
+				blob = auto_bom(blob);
+			}
+			return navigator.msSaveOrOpenBlob(blob, name);
+		};
+	}
+
+	FS_proto.abort = function(){};
+	FS_proto.readyState = FS_proto.INIT = 0;
+	FS_proto.WRITING = 1;
+	FS_proto.DONE = 2;
+
+	FS_proto.error =
+	FS_proto.onwritestart =
+	FS_proto.onprogress =
+	FS_proto.onwrite =
+	FS_proto.onabort =
+	FS_proto.onerror =
+	FS_proto.onwriteend =
+		null;
+
+	return saveAs;
+}(
+	   typeof self !== "undefined" && self
+	|| typeof window !== "undefined" && window
+	|| this.content
+));
+
+if (typeof module !== "undefined" && module.exports) {
+  module.exports.saveAs = saveAs;
+} else if ((typeof define !== "undefined" && define !== null) && (define.amd !== null)) {
+  define("FileSaver.js", function() {
+    return saveAs;
+  });
+}
+
+function doesFileExist(url) {
+    var fileObject=new ActiveXObject("Scripting.FileSystemObject");
+    
+    if(!fileObject.FileExists(url)) {
+        
+        return false;
+    } else {
+        return true;
+    }
+}
+
 
 function doesFileExist(url) {
     var fileObject=new ActiveXObject("Scripting.FileSystemObject");

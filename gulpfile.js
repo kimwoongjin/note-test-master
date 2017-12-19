@@ -8,7 +8,7 @@ var livereload = require('gulp-livereload');
 var gutil = require('gulp-util');
 
 var src  = 'public/src';
-var dist = 'public/dist';
+var dist = 'dist/dest';
 
 var paths = {
 	js: src + '/js/*.js',
