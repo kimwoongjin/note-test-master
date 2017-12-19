@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <title id="title">My Note</title>
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div class="header">
+  <h1>My Note</h1>
+  <div class="menu">
+    <button class="btn-newnote" id="new">새노트</button>
+    <button class="btn-savenote" id="save">노트저장</button>
+    <button class="btn-about" id="about">about</button>
+    <button class="btn-fs" id="fullbutton">전체화면</button>
+    <button class="btn-exit" id="exitbutton">일반화면</button>
+  </div>
+</div>
+
+<div class="container" id="con">
+  <iframe id="SaveSomePart" style="display:none"></iframe>
+  <textarea id="memo" placeholder="내용을 입력하세요"></textarea>
+  <div class="about-app-contents" id="about-app" style="display: none">web-note-app</div>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>

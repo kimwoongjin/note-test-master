@@ -1,0 +1,40 @@
+{
+  "name": "note-app",
+  "version": "1.0.0",
+  "description": "can using note-app",
+  "main": "app.js",
+  "dependencies": {
+    "gulp-uglify": "^3.0.0",
+    "screenfull": "^3.3.2"
+  },
+  "devDependencies": {
+    "combine-js": "^1.0.0",
+    "compile-sass": "0.0.2",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-eslint": "^4.0.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-minify-html": "^1.0.6",
+    "gulp-open": "^2.0.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-server": "^0.1.0",
+    "gulp-util": "^3.0.8",
+    "gulp-webserver": "^0.9.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "kgb2089",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kgb2089/note-app.git"
+  },
+  "keywords": [
+    "note-app"
+  ],
+  "bugs": {
+    "url": "https://github.com/kgb2089/note-app/issues"
+  },
+  "homepage": "https://github.com/kgb2089/note-app#readme"
+}
