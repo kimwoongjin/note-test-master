@@ -1,7 +1,7 @@
 {
-  "name": "note-app",
+  "name": "note-test-app",
   "version": "1.0.0",
-  "description": "can using note-app",
+  "description": "note-test-master",
   "main": "app.js",
   "dependencies": {
     "gulp-uglify": "^3.0.0",
@@ -24,17 +24,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "kgb2089",
+  "author": "kimwoongjin",
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kgb2089/note-app.git"
+    "url": "git+https://github.com/kimwoongjin/note-test-master.git"
   },
   "keywords": [
-    "note-app"
+    "note-test-master"
   ],
   "bugs": {
-    "url": "https://github.com/kgb2089/note-app/issues"
+    "url": "https://github.com/kimwoongjin/note-test-master/issues"
   },
-  "homepage": "https://github.com/kgb2089/note-app#readme"
+  "homepage": "https://github.com/kimwoongjin/note-test-master#readme"
 }
